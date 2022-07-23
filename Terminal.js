@@ -1,6 +1,5 @@
 const express = require("express");
 // For future use of Terminal Data from the database
-
 const app = express();
 
 const { io } = require("./server");
@@ -15,8 +14,6 @@ var sshConfig = {
   port: process.env.SSH_PORT,
 };
 
-//  We use UTF-8 encoding for the terminal
-var utf8 = require("utf8");
 
 var SSHClient = require("ssh2").Client;
 
@@ -28,7 +25,7 @@ io.on("connection", function (socket) {
   // Connecting to the SSH Server
   ssh
     .on("ready", function () {
-      socket.emit("data", "\r\n*** SSH CONNECTION ESTABLISHED ***\r\n");
+      // socket.emit("data", "\r\n*** SSH CONNECTION ESTABLISHED ***\r\n");
       // console.log("SSH CONNECTION ESTABLISHED");
       connected = true;
       // Executing the command with the SSH Client
@@ -46,7 +43,8 @@ io.on("connection", function (socket) {
         stream
           .on("data", function (d) {
             // emitting the decoded data to the client
-            socket.emit("data", utf8.decode(d.toString("binary")));
+            socket.emit("data", d.toString('utf-8'));
+
           })
           .on("close", function () {
             ssh.end();
