@@ -4,6 +4,7 @@
   "description": "backend for lightUI for running scripts passing from react to nodejs",
   "main": "index.js",
   "scripts": {
+    "watch": "nodemon server.js", 
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
