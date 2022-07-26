@@ -14,7 +14,6 @@ var sshConfig = {
   port: process.env.SSH_PORT,
 };
 
-
 var SSHClient = require("ssh2").Client;
 
 //Socket Connection
@@ -43,8 +42,7 @@ io.on("connection", function (socket) {
         stream
           .on("data", function (d) {
             // emitting the decoded data to the client
-            socket.emit("data", d.toString('utf-8'));
-
+            socket.emit("data", d.toString("utf-8"));
           })
           .on("close", function () {
             ssh.end();
