@@ -60,24 +60,36 @@ function App() {
     });
   }, [socket]);
   return (
-    <div>
-      <div className="text-slate-800 bg-slate-50 p-1 flex justify-between    ">
-        <h1 className="font-bold "> SSH Terminal </h1>
-        <h1 className=" ">
-          Status:
-          <span
-            style={connectionStyle ? { color: "green" } : { color: "red" }}
-            className="pl-2"
-          >
-            {connected ? "Connected ✅" : "Disconnected ❌"}
-          </span>
-        </h1>
-      </div>
+    <div className="p-2 b  m-0">
+      <div>
+        <div className="text-slate-800 bg-slate-50 p-1 flex justify-between    ">
+          <h1 className="font-bold "> SSH Terminal </h1>
+          <h1 className=" ">
+            Status:
+            <span
+              style={connectionStyle ? { color: "green" } : { color: "red" }}
+              className="pl-2"
+            >
+              {connected ? "Connected ✅" : "Disconnected ❌"}
+            </span>
+          </h1>
+        </div>
 
-      <div ref={terminalRef} className="p-2 bg-black" />
+        <div ref={terminalRef} className="p-2 bg-black" />
+      </div>
       {/* You can delete the below line if you want to use it to your projects */}
-      <footer className="fixed z-50 text-center left-0 w-screen bottom-0 ">
-        By Saikiran Belana
+      <footer className="fixed z-50 text-center bg-slate-50 left-0 w-screen bottom-0 p-1 ">
+        <span>By </span>
+        <span className="text-sky-900 font-bold hover:text-yellow-600">
+          <a
+            href="https://github.com/belanasaikiran"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Saikiran Belana
+          </a>
+          {/* Same line as name */}
+        </span>
       </footer>
     </div>
   );
