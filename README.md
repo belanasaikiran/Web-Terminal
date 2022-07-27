@@ -1,11 +1,29 @@
-# Web-Terminal
-Web Terminal Using xTerm, SSH2 &amp; Socket.io
+# <img width="40px" src="./Images/SSH.png"/>Web Terminal
+
+> Web Terminal Using [xTerm](https://www.npmjs.com/package/xterm), [SSH2](https://www.npmjs.com/package/ssh2) & [Socket.io](https://socket.io/)
+> 
+
+### **Built on**:
+
+NodeJs - BackEnd & ReactJs - FrontEnd
 
 
-Built on NodeJs backend & ReactJs FrontEnd.
+
+​     <img width="90px" height="90px" src="./Images/NodeJs.png"/><img width="150px" height="90px" src="./Images/ReactJs.png"/>
+
 
 
 You can fork it and use it for your projects.
 
+I've added a `.env` file so that you can use it to modify according to your device credentials 🔑
 
-I've added a .env file so that you can use it to modify according to your device credentials
+### Application Looks:
+
+<img src="./Images/giphy.gif" class="left:0; margin:0; border:0; padding:0" />
+
+Any Contributions are always welcome 🤗 …
+
+
+
+
+
