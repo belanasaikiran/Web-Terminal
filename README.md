@@ -1,4 +1,4 @@
-# <img width="30px" style={padding-right: 5px}  src="./Images/SSH.png"/> Web Terminal
+# <img width="30px"  src="./Images/SSH.png"/> Web Terminal
 
 > Web Terminal Using [xTerm](https://www.npmjs.com/package/xterm), [SSH2](https://www.npmjs.com/package/ssh2) & [Socket.io](https://socket.io/)
 > 
