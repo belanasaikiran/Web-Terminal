@@ -13,6 +13,12 @@ NodeJs - BackEnd & ReactJs - FrontEnd
 
 
 
+Clone Project:
+```
+git clone https://github.com/belanasaikiran/Web-Terminal.git
+```
+
+
 You can fork it and use it for your projects.
 
 I've added a `.env` file so that you can use it to modify according to your device credentials 🔑
