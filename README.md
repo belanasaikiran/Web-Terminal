@@ -3,7 +3,7 @@
 > Web Terminal Using [xTerm](https://www.npmjs.com/package/xterm), [SSH2](https://www.npmjs.com/package/ssh2) & [Socket.io](https://socket.io/)
 > 
 
-### **Built on**:
+## **Built on**:
 
 NodeJs - BackEnd & ReactJs - FrontEnd
 
@@ -13,7 +13,7 @@ NodeJs - BackEnd & ReactJs - FrontEnd
 
 
 
-Clone Project:
+## Clone Project:
 ```
 git clone https://github.com/belanasaikiran/Web-Terminal.git
 ```
