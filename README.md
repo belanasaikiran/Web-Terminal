@@ -63,6 +63,10 @@ npm run dev
 Any Contributions are always welcome 🤗 …
 
 
+### Future Changes/Releases
+- Build an Electron app for a unified version.
+
+
 
 
 
