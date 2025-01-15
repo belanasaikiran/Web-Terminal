@@ -1,10 +1,14 @@
 // Importing Express Router
 const express = require("express");
 const app = express();
+const fs = require("fs");
 
 // Importing cors
 const cors = require("cors");
 app.use(cors());
+
+// Middleware to parse JSON body
+app.use(express.json());
 
 // socket.io setup
 const server = require("http").createServer(app);
@@ -52,6 +56,30 @@ app.use("/terminal", Terminal);
 app.get("/", (req, res) => {
   res.send("Just a Server Route");
 });
+
+// end point for config.json
+app.get("/config", (req, res) => {
+  var config = fs.readFileSync("./modifiedConfig.json", "utf8");
+  console.log("config:", config);
+  res.json(config);
+});
+
+// post endpoint for config.json
+app.post("/config", (req, res) => {
+  console.log("Request Hit!\n");
+
+  // read json data from the request
+  console.log("Request Body: ", req.body);
+
+
+  const config = req.body;
+  
+  // update the config.json file
+  fs.writeFileSync("modifiedConfig.json", JSON.stringify(config, null, 2));
+  res.json({success: true, message: "Config Updated Successfully"});
+});
+
+
 
 // using PORT from env file or 5000 for local development
 const PORT = process.env.PORT || 5000;

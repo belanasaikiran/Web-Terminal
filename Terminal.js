@@ -1,6 +1,7 @@
 const express = require("express");
 // For future use of Terminal Data from the database
 const app = express();
+const fs = require("fs");
 
 const { io } = require("./server");
 const dotEnv = require("dotenv");
@@ -16,16 +17,37 @@ var sshConfig = {
 
 var SSHClient = require("ssh2").Client;
 
+// load config.json
+const getConfig = () => {
+  if(fs.existsSync('modifiedConfig.json')) {
+    return JSON.parse(fs.readFileSync('./modifiedConfig.json', 'utf8'));
+  }
+}
+
+
+// The below code is for the terminal
 //Socket Connection
 io.on("connection", function (socket) {
   // Creating  a new SSH Client
-  var ssh = new SSHClient();
+  // var ssh = new SSHClient();
+
+
+  // if config.json exists, use that configuration
+  if (getConfig()) {
+    sshConfig = getConfig();
+    console.log("Set sshConfig from JSON file");
+  }
+
+  // Creating a new SSH Client
+    var ssh = new SSHClient();
+
+
+  console.log(sshConfig);
 
   // Connecting to the SSH Server
   ssh
     .on("ready", function () {
       // socket.emit("data", "\r\n*** SSH CONNECTION ESTABLISHED ***\r\n");
-      // console.log("SSH CONNECTION ESTABLISHED");
       connected = true;
       // Executing the command with the SSH Client
       ssh.shell(function (err, stream) {
